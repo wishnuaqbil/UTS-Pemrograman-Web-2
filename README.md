@@ -95,6 +95,9 @@ node server.js
 
 Kemudian buka file `index.html` di dua tab browser untuk melihat komunikasi dua arah secara real-time.
 
+# Output
+![gambar](Screenshot 2025-05-08 230253.png)
+
 ## Analisis Hasil
 
 WebSocket:
