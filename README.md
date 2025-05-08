@@ -96,7 +96,8 @@ node server.js
 Kemudian buka file `index.html` di dua tab browser untuk melihat komunikasi dua arah secara real-time.
 
 # Output
-![gambar](Screenshot 2025-05-08 230253.png)
+![Screenshot 2025-05-08 230253](https://github.com/user-attachments/assets/f332300e-e8d0-44dc-a039-0bdc086dc53e)
+
 
 ## Analisis Hasil
 
