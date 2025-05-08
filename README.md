@@ -5,42 +5,38 @@
 
 # Membangun Aplikasi Chat Real-Time Sederhana dengan WebSocket
 
-## 📌 Pendahuluan
-Di era digital saat ini, kebutuhan akan komunikasi real-time menjadi semakin penting, terutama dalam pengembangan aplikasi web seperti layanan chat, notifikasi langsung, hingga sistem monitoring. Salah satu teknologi yang mendukung komunikasi dua arah secara efisien antara client dan server adalah **WebSocket**.
+## Pendahuluan
 
-Artikel ini menjelaskan secara teknis cara kerja WebSocket melalui eksperimen membangun aplikasi chat sederhana menggunakan **Node.js** dan **JavaScript**, sekaligus membuktikan bagaimana WebSocket mampu mengelola komunikasi real-time secara stabil dan ringan.
+Di era digital saat ini, kebutuhan akan komunikasi real-time menjadi semakin penting, terutama dalam pengembangan aplikasi web seperti layanan chat, notifikasi langsung, hingga sistem monitoring. Salah satu teknologi yang mendukung komunikasi dua arah secara efisien antara client dan server adalah WebSocket.
 
----
+Artikel ini bertujuan menjelaskan secara teknis cara kerja WebSocket melalui eksperimen membangun aplikasi chat sederhana menggunakan Node.js dan JavaScript, sekaligus membuktikan bagaimana WebSocket mampu mengelola komunikasi real-time secara stabil dan ringan.
 
-## 💡 Apa Itu WebSocket?
-WebSocket adalah protokol komunikasi berbasis **TCP** yang memungkinkan koneksi dua arah (*full-duplex*) antara server dan client. Tidak seperti HTTP yang bersifat satu arah dan stateless, WebSocket mempertahankan koneksi terbuka, sehingga komunikasi bisa berlangsung terus-menerus tanpa membuat permintaan baru.
+## Apa Itu WebSocket?
 
----
+WebSocket adalah protokol komunikasi berbasis TCP yang memungkinkan koneksi dua arah (full-duplex) antara server dan client. Tidak seperti HTTP yang stateless dan satu arah, WebSocket mempertahankan koneksi terbuka, sehingga komunikasi bisa berlangsung terus-menerus tanpa perlu membuat permintaan baru.
 
-## 🧪 Eksperimen: Membangun Aplikasi Chat Real-Time
+## Eksperimen: Membangun Aplikasi Chat Real-Time
 
-### 🛠️ Alat dan Bahan
+### Alat dan Bahan
 - Node.js
-- Library `ws` (WebSocket)
-- HTML + JavaScript (untuk client)
-- Terminal untuk menjalankan server
+- Library WebSocket (`ws`)
+- HTML + JavaScript (client)
+- Terminal (untuk menjalankan server)
 
----
+### Langkah-langkah Eksperimen
 
-## 🔧 Langkah-langkah Eksperimen
-
-### 1. Inisialisasi Proyek
+#### 1. Inisialisasi Proyek
 
 ```bash
 mkdir websocket-chat
 cd websocket-chat
 npm init -y
 npm install ws
+```
 
-###2. Membuat Server WebSocket (server.js)
-javascript
-Copy
-Edit
+#### 2. Membuat Server WebSocket (`server.js`)
+
+```javascript
 const WebSocket = require('ws');
 const wss = new WebSocket.Server({ port: 8080 });
 
@@ -56,17 +52,15 @@ wss.on('connection', function connection(ws) {
   });
 
   ws.send('Selamat datang di chat WebSocket!');
-});'''
+});
+```
 
-###3. Membuat Client HTML (index.html)
-'''html
-Copy
-Edit
+#### 3. Membuat Client HTML (`index.html`)
+
+```html
 <!DOCTYPE html>
 <html>
-<head>
-  <title>Chat WebSocket</title>
-</head>
+<head><title>Chat WebSocket</title></head>
 <body>
   <h2>Chat</h2>
   <input type="text" id="msg" placeholder="Ketik pesan..." />
@@ -86,40 +80,38 @@ Edit
     function send() {
       const msg = document.getElementById('msg').value;
       ws.send(msg);
+      document.getElementById('msg').value = '';
     }
   </script>
 </body>
-</html>'''
+</html>
+```
 
-###4. Menjalankan Aplikasi
-bash
-Copy
-Edit
+#### 4. Menjalankan Aplikasi
+
+```bash
 node server.js
-Lalu buka file index.html di dua tab browser berbeda untuk melihat komunikasi dua arah secara real-time.
+```
 
-🔍 Analisis Hasil
-Eksperimen ini menunjukkan bahwa WebSocket:
+Kemudian buka file `index.html` di dua tab browser untuk melihat komunikasi dua arah secara real-time.
 
-Memungkinkan pertukaran data secara instan antara client dan server.
+## Analisis Hasil
 
-Menghemat bandwidth karena tidak ada request berkala seperti polling.
+WebSocket:
+- Memungkinkan pertukaran data instan tanpa reload halaman.
+- Menghemat bandwidth karena tidak perlu banyak permintaan HTTP.
+- Cocok untuk aplikasi real-time seperti game, trading, monitoring.
 
-Cocok untuk aplikasi real-time seperti: game online, sistem trading, live chat, dan monitoring data.
+Namun juga memiliki tantangan:
+- Harus dikelola dengan baik untuk mencegah kebocoran memori.
+- Tidak cocok untuk aplikasi non-real-time.
 
-⚠️ Tantangan
-Koneksi terbuka terlalu lama dapat menyebabkan kebocoran memori.
+## Kesimpulan
 
-Tidak cocok untuk aplikasi yang tidak memerlukan komunikasi dua arah secara real-time.
+WebSocket adalah solusi efisien untuk komunikasi real-time dalam aplikasi web. Melalui eksperimen ini, terbukti bahwa implementasinya mudah dan memberikan pengalaman pengguna yang interaktif dan modern.
 
-✅ Kesimpulan
-WebSocket adalah solusi efisien untuk membangun komunikasi real-time dalam aplikasi web. Eksperimen ini membuktikan bahwa implementasi WebSocket cukup sederhana dan sangat bermanfaat untuk meningkatkan pengalaman pengguna dalam aplikasi interaktif.
+## Referensi
 
-📚 Referensi
-Mozilla Developer Network - WebSocket
-
-WebSocket npm Package
-
-Node.js Documentation
-
-
+- [Mozilla Developer Network - WebSocket](https://developer.mozilla.org/en-US/docs/Web/API/WebSocket)
+- [WebSocket npm Package](https://www.npmjs.com/package/ws)
+- [Dokumentasi Node.js](https://nodejs.org/en/docs)
