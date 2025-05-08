@@ -119,7 +119,5 @@ WebSocket adalah solusi efisien untuk komunikasi real-time dalam aplikasi web. M
 
 Referensi
 Mozilla Developer Network - WebSocket
-
 WebSocket npm Package
-
 Dokumentasi Node.js
