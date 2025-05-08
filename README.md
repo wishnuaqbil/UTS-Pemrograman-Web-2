@@ -36,7 +36,8 @@ mkdir websocket-chat
 cd websocket-chat
 npm init -y
 npm install ws
-2. Membuat Server WebSocket (server.js)
+
+###2. Membuat Server WebSocket (server.js)
 javascript
 Copy
 Edit
@@ -56,7 +57,8 @@ wss.on('connection', function connection(ws) {
 
   ws.send('Selamat datang di chat WebSocket!');
 });
-3. Membuat Client HTML (index.html)
+
+###3. Membuat Client HTML (index.html)
 html
 Copy
 Edit
@@ -88,7 +90,8 @@ Edit
   </script>
 </body>
 </html>
-4. Menjalankan Aplikasi
+
+###4. Menjalankan Aplikasi
 bash
 Copy
 Edit
