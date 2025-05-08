@@ -4,7 +4,6 @@
 |**Wishnu Aqbil Ramadani**|**312310591**|**TI.23.A6**|**Pemrograman Web 2**|
 
 Membangun Aplikasi Chat Real-Time Sederhana dengan WebSocket: Eksperimen dan Panduan Praktis
-<!-- Ganti dengan tautan gambar cover yang sesuai -->
 
 Pendahuluan
 Di era digital saat ini, kebutuhan akan komunikasi real-time menjadi semakin penting, terutama dalam pengembangan aplikasi web seperti layanan chat, notifikasi langsung, hingga sistem monitoring. Salah satu teknologi yang mendukung komunikasi dua arah secara efisien antara client dan server adalah WebSocket.
