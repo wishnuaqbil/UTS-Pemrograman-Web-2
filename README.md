@@ -56,10 +56,10 @@ wss.on('connection', function connection(ws) {
   });
 
   ws.send('Selamat datang di chat WebSocket!');
-});
+});'''
 
 ###3. Membuat Client HTML (index.html)
-html
+'''html
 Copy
 Edit
 <!DOCTYPE html>
@@ -89,7 +89,7 @@ Edit
     }
   </script>
 </body>
-</html>
+</html>'''
 
 ###4. Menjalankan Aplikasi
 bash
@@ -121,3 +121,5 @@ Mozilla Developer Network - WebSocket
 WebSocket npm Package
 
 Node.js Documentation
+
+
