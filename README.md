@@ -14,7 +14,7 @@ Apa Itu WebSocket?
 WebSocket adalah protokol komunikasi berbasis TCP yang memungkinkan koneksi dua arah (full-duplex) antara server dan client. Tidak seperti HTTP yang stateless dan satu arah, WebSocket mempertahankan koneksi terbuka, sehingga komunikasi bisa berlangsung terus-menerus tanpa perlu membuat permintaan baru.
 
 Eksperimen: Membangun Aplikasi Chat Real-Time
-Alat dan Bahan
+Alat dan Bahan:
 Node.js
 
 Library WebSocket (ws)
@@ -22,29 +22,25 @@ Library WebSocket (ws)
 HTML + JavaScript (client)
 
 Terminal (untuk menjalankan server)
-idr.uin-antasari.ac.id
-+3
-DEV Community
-+3
-CometChat
-+3
-Advan.id | Blog
-+1
-Medium
-+1
 
 Langkah-langkah Eksperimen
-1. Inisialisasi Proyek
+Inisialisasi Proyek
+
+Buka terminal dan jalankan perintah berikut untuk membuat folder proyek dan menginstal dependencies:
+
 bash
-Salin
+Copy
 Edit
 mkdir websocket-chat
 cd websocket-chat
 npm init -y
 npm install ws
-2. Membuat Server WebSocket (server.js)
+Membuat Server WebSocket (server.js)
+
+Buat file server.js untuk membuat server WebSocket yang mendengarkan pada port 8080:
+
 javascript
-Salin
+Copy
 Edit
 const WebSocket = require('ws');
 const wss = new WebSocket.Server({ port: 8080 });
@@ -62,9 +58,12 @@ wss.on('connection', function connection(ws) {
 
   ws.send('Selamat datang di chat WebSocket!');
 });
-3. Membuat Client HTML (index.html)
+Membuat Client HTML (index.html)
+
+Buat file index.html untuk antarmuka pengguna aplikasi chat menggunakan HTML dan JavaScript:
+
 html
-Salin
+Copy
 Edit
 <!DOCTYPE html>
 <html>
@@ -92,12 +91,15 @@ Edit
   </script>
 </body>
 </html>
-4. Menjalankan Aplikasi
+Menjalankan Aplikasi
+
+Jalankan server dengan perintah berikut di terminal:
+
 bash
-Salin
+Copy
 Edit
 node server.js
-Buka index.html di dua browser untuk melihat hasil komunikasi dua arah secara langsung.
+Setelah itu, buka index.html di dua browser untuk melihat hasil komunikasi dua arah secara langsung.
 
 Analisis Hasil
 Eksperimen ini menunjukkan bahwa WebSocket:
@@ -119,5 +121,8 @@ WebSocket adalah solusi efisien untuk komunikasi real-time dalam aplikasi web. M
 
 Referensi
 Mozilla Developer Network - WebSocket
+
 WebSocket npm Package
+
 Dokumentasi Node.js
+
